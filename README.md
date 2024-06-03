@@ -31,6 +31,9 @@ This is a chat application built using React and Chat-UI-Kit, which integrates w
 - The "New Session" button allows you to create and switch between different chat sessions.
 - You can clear the current session or delete sessions using the respective buttons.
 
+## Application Screenshot
+<img width="615" alt="Screenshot 2024-06-03 at 1 26 37 PM" src="https://github.com/Rishi-245/CosmoChat-UI/assets/78450356/ee6dd741-1abe-482a-a984-6808b74b146e">
+
 ## Credits
 - React: https://reactjs.org/
 - Chat-UI-Kit: https://chatscope.io/
