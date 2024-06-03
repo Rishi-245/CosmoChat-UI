@@ -34,3 +34,5 @@ This is a chat application built using React and Chat-UI-Kit, which integrates w
 - Chat-UI-Kit: https://chatscope.io/
 - OpenAI: https://openai.com/
 - React Chart.js: https://www.npmjs.com/package/react-chartjs-2
+
+- Chatbot Guide: Cooper Codes
