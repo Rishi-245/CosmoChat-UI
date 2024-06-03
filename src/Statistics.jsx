@@ -2,8 +2,30 @@ import React from 'react';
 import { Bar } from 'react-chartjs-2';
 import 'chart.js/auto'; // Import Chart.js CSS
 
-const Statistics = ({ userMessageCount, chatGPTMessageCount }) => {
-  const data = {
+const calculateMessageLengthStatistics = (messages) => {
+  const messageLengths = messages.map(msg => msg.message.length);
+  const totalMessages = messageLengths.length;
+  const averageMessageLength = messageLengths.reduce((acc, len) => acc + len, 0) / totalMessages;
+  const shortestMessage = messages.reduce((shortest, msg) => msg.message.length < shortest.message.length ? msg : shortest, messages[0]);
+  const longestMessage = messages.reduce((longest, msg) => msg.message.length > longest.message.length ? msg : longest, messages[0]);
+
+  return {
+    totalMessages,
+    averageMessageLength,
+    shortestMessage,
+    longestMessage
+  };
+};
+
+const Statistics = ({ userMessageCount, chatGPTMessageCount, messages }) => {
+  const {
+    totalMessages,
+    averageMessageLength,
+    shortestMessage,
+    longestMessage,
+  } = calculateMessageLengthStatistics(messages);
+
+  const messageCountData = {
     labels: ['User Messages', 'ChatGPT Messages'],
     datasets: [
       {
@@ -18,26 +40,17 @@ const Statistics = ({ userMessageCount, chatGPTMessageCount }) => {
     ],
   };
 
-  const options = {
-    responsive: true,
-    maintainAspectRatio: false,
-    scales: {
-      yAxes: [
-        {
-          ticks: {
-            beginAtZero: true,
-            precision: 0,
-          },
-        },
-      ],
-    },
-  };
-
   return (
     <div className="statistics">
       <h2>Chat Session Statistics</h2>
       <div className="chart-container">
-        <Bar data={data} options={options} />
+        <Bar data={messageCountData} />
+      </div>
+      <div>
+        <p>Total Messages: {totalMessages}</p>
+        <p>Average Message Length: {averageMessageLength.toFixed(2)} characters</p>
+        <p>Shortest Message: "{shortestMessage.message}" ({shortestMessage.message.length} characters)</p>
+        <p>Longest Message: "{longestMessage.message}" ({longestMessage.message.length} characters)</p>
       </div>
     </div>
   );
