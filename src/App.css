@@ -3,56 +3,66 @@
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  background-color: #f0f2f5; /* Light background color */
+  color: #333; /* Darker text color for contrast */
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+button {
+  margin: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 5px;
+  background-color: #4CAF50; /* Green color for buttons */
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+button:hover {
+  background-color: #45a049; /* Slightly darker green on hover */
 }
 
-.card {
-  padding: 2em;
+button:focus {
+  outline: none;
+  box-shadow: 0 0 5px #4CAF50;
 }
 
-.read-the-docs {
-  color: #888;
+input[type="text"] {
+  padding: 0.75rem;
+  margin: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
 }
 
-/* Add this to App.css or create a new CSS file and import it in Statistics.jsx */
+select {
+  padding: 0.75rem;
+  margin: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+  background-color: white;
+  color: #333;
+}
+
 .statistics {
   margin-top: 2rem;
   padding: 1rem;
-  background: #0c0000;
+  background: #ffffff;
   border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
 }
 
 .statistics h2 {
   margin-bottom: 1rem;
+  color: #4CAF50; /* Matching the button color */
 }
 
 .statistics p {
   margin: 0.5rem 0;
+}
+
+.chart-container {
+  height: 400px; /* Fixed height for the chart container */
 }
