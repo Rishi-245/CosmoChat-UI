@@ -9,6 +9,7 @@ This is a chat application built using React and Chat-UI-Kit, which integrates w
 - Message length statistics display
 - Message length distribution histogram
 - Shortest and longest message lengths displayed as bar graphs
+- **Session Management:** Users can create multiple chat sessions, switch between sessions, clear individual sessions, and delete sessions.
 
 ## Tools Used
 - React
@@ -24,10 +25,11 @@ This is a chat application built using React and Chat-UI-Kit, which integrates w
 5. Start the development server: `npm start`
 
 ## Usage
-1. Launch the application using `npm start`.
-2. Chat with the AI using the chat input.
-3. View real-time statistics by clicking on the "View Statistics" button.
-4. Interact with the histogram and bar graphs to explore message length data.
+- Launch the application using `npm start`.
+- Upon running the application, you can start chatting with the virtual assistant.
+- Use the "View Statistics" button to switch to the statistics view and back to the chat view.
+- The "New Session" button allows you to create and switch between different chat sessions.
+- You can clear the current session or delete sessions using the respective buttons.
 
 ## Credits
 - React: https://reactjs.org/
